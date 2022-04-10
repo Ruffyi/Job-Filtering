@@ -1,0 +1,21 @@
+$ff-primary: 'Spartan', sans-serif;
+$fs-map: (
+	'primary': 62.5%,
+	'secondary': 56.25%,
+);
+
+$clr-map: (
+	'color--desaturated-dark-cyan': #5ba4a4,
+	'color--light-grayish-cyan': #effafa,
+	'color--light-grayish-cyan-filter': #eef6f6,
+	'color--dark-grayish-cyan': #7b8e8e,
+	'color--very-dark-grayish-cyan': #2c3a3a,
+	'color--primary': #ffffff,
+);
+
+$mq-breakpoints: (
+	'mobile': 48rem,
+	'tablet': 53.625rem,
+);
+
+$max-width: 104rem;

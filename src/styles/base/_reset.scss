@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+:root {
+	box-sizing: border-box;
+	font-family: $ff-primary;
+	font-size: map-get($fs-map, 'primary');
+    @include mq(map-get($mq-breakpoints, 'tablet')) {
+		font-size:map-get($fs-map,'secondary')
+	}
+}
+
+img {
+	width: 100%;
+	object-fit: cover;
+}
