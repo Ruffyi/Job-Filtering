@@ -16,7 +16,7 @@ const JobItemRequirement = ({
 	return (
 		<div className={styled()}>
 			{[role, level, ...languages, ...tools].map(requirement => {
-				return <Button requirement={requirement} />;
+				return <Button status='requirement' name={requirement} />;
 			})}
 		</div>
 	);

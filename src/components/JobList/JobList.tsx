@@ -1,7 +1,7 @@
 import { default as bemCssModules } from 'bem-css-modules';
 import { default as JobListStyles } from './JobList.module.scss';
 
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { jobContext } from '../../store/jobContext';
 import { filterContext } from '../../store/filterContext';
 import JobItem from '../JobItem/JobItem';

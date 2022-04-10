@@ -1,0 +1,6 @@
+@import './../../styles/abstracts/mixins';
+
+.filter-option {
+	@include flex-mother();
+	margin: 0 1rem;
+}

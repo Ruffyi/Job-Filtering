@@ -26,6 +26,7 @@
 		@include flex-mother();
 		color: map-get($clr-map, 'color--light-grayish-cyan-filter');
 		background-color: map-get($clr-map, 'color--desaturated-dark-cyan');
+		height: 100%;
 		&:hover {
 			background-color: map-get($clr-map, 'color--very-dark-grayish-cyan');
 		}

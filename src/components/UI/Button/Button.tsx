@@ -12,21 +12,25 @@ bemCssModules.setSettings({
 	modifierDelimiter: '--',
 });
 
-const Button = ({ requirement }: TButton) => {
+const Button = ({ status, name, children }: TButton) => {
 	const { filterOptions, setFilterOptions } = useContext(filterContext);
 
-	const addRequirementToFilterOptions = () => {
-		if (filterOptions.includes(requirement)) return;
+	const textContent = children ? children : name;
 
-		setFilterOptions([...filterOptions, requirement]);
+	const addRequirementToFilterOptions = () => {
+		if (typeof name !== 'string') return;
+
+		if (filterOptions.includes(name)) return;
+
+		setFilterOptions([...filterOptions, name]);
 	};
 
 	return (
 		<button
-			className={styled('', { requirement: true })}
+			className={styled('', { [status]: true })}
 			onClick={addRequirementToFilterOptions}
 		>
-			{requirement}
+			{textContent}
 		</button>
 	);
 };
