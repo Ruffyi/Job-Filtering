@@ -1,0 +1,11 @@
+@import './../../styles/abstracts/variables';
+@import './../../styles/abstracts/mixins';
+
+.jobs {
+	position: relative;
+	max-width: $max-width;
+	margin: 0 auto;
+	@include mq(map-get($mq-breakpoints, 'mobile')) {
+		margin: 0 2rem;
+	}
+}

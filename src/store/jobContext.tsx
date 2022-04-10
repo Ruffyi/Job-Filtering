@@ -24,4 +24,6 @@ const JobContextProvider = ({ children }: TRoot) => {
 	);
 };
 
+export { jobContext };
+
 export default JobContextProvider;
