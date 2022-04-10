@@ -1,0 +1,48 @@
+@import './../../styles/abstracts/variables';
+@import './../../styles/abstracts/mixins';
+
+.offert {
+	@include flex-mother();
+	@include mq(map-get($mq-breakpoints, 'tablet')) {
+		width: 100%;
+		justify-content: flex-start;
+		margin-top: 4rem;
+	}
+	&__image {
+		margin-right: 3rem;
+		@include mq(map-get($mq-breakpoints, 'tablet')) {
+			@include dimension(6rem, 6rem);
+			@include positioning(absolute, -10%, 10%);
+		}
+	}
+	&__company {
+		color: map-get($clr-map, 'color--desaturated-dark-cyan');
+		font-weight: 700;
+		font-size: 1.3rem;
+	}
+	&__title {
+		font-size: 1.7rem;
+		transition: all 0.3s;
+		cursor: pointer;
+		&:hover {
+			color: map-get($clr-map, 'color--desaturated-dark-cyan');
+		}
+	}
+	&__name {
+		@include flex-mother(row, center, flex-start);
+		margin-bottom: 2rem;
+	}
+	&__informations {
+		@include flex-mother(row, center, space-between);
+		list-style-type: none;
+		margin-top: 2rem;
+	}
+	&__information {
+		flex-grow: 1;
+		color: map-get($clr-map, 'color--dark-grayish-cyan');
+		&:not(&:first-child) {
+			list-style-type: disc;
+			padding-left: 1.5rem;
+		}
+	}
+}

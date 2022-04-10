@@ -15,7 +15,7 @@ const jobContext = createContext<TJobContext>({
 });
 
 const JobContextProvider = ({ children }: TRoot) => {
-	const { data, setData } = useFetch<TJob>('./data/data.json');
+	const { data, setData } = useFetch<TJob>('./data.json');
 
 	return (
 		<jobContext.Provider value={{ jobsData: data, setJobsData: setData }}>

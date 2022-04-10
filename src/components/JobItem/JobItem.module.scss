@@ -1,0 +1,33 @@
+@import './../../styles/abstracts/variables';
+@import './../../styles/abstracts/mixins';
+
+.job {
+	@include flex-mother(row, center, space-between);
+	min-height: 15rem;
+	margin: 4rem 0;
+	padding: 0 5rem;
+	background-color: map-get($clr-map, 'color--primary');
+	box-shadow: 0 0.2rem 1rem map-get($clr-map, 'color--dark-grayish-cyan');
+	border-radius: 1rem;
+
+	@include mq(map-get($mq-breakpoints, 'tablet')) {
+		@include flex-mother(column, center, space-around);
+		@include dimension(50%, 25rem);
+		position: relative;
+		padding: 0 2rem;
+		margin-inline: auto;
+	}
+	@include mq(map-get($mq-breakpoints, 'mobile')) {
+		width: 80%;
+	}
+	&--new {
+		border-left: 6px solid map-get($clr-map, 'color--desaturated-dark-cyan');
+	}
+	&__requirement {
+		@include mq(map-get($mq-breakpoints, 'mobile')) {
+			padding-top: 2rem;
+			border-top: 2px solid
+				map-get($clr-map, 'color--light-grayish-cyan-filter');
+		}
+	}
+}

@@ -1,3 +1,7 @@
-type Add = number;
+import { TJob } from './shared/Job.types';
 
-export default Add;
+type TJobRoot = {
+	jobData: TJob[];
+};
+
+export type { TJobRoot };
