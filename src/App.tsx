@@ -1,9 +1,10 @@
-import Root from './components/Root/Root';
+import Header from './layouts/Header/Header';
+import Root from './layouts/Root/Root';
 
 const App = () => {
 	return (
 		<Root>
-			<h1>Hi!</h1>
+			<Header />
 		</Root>
 	);
 };

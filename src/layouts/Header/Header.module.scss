@@ -1,0 +1,13 @@
+@import './../../styles/abstracts/variables';
+@import './../../styles/abstracts/mixins';
+
+.header {
+	height: 15rem;
+	background-color: map-get($clr-map, 'color--desaturated-dark-cyan');
+	background-image: url(./../../assets/images/bg-header-desktop.svg);
+	background-size: cover;
+
+	@include mq(map-get($mq-breakpoints, 'mobile')) {
+		background-image: url(./../../assets/images/bg-header-mobile.svg);
+	}
+}
