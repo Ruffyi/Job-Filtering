@@ -21,4 +21,6 @@ const FilterContextProvider = ({ children }: TRoot) => {
 	);
 };
 
+export { filterContext };
+
 export default FilterContextProvider;

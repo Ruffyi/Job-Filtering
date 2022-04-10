@@ -1,0 +1,12 @@
+@import './../../styles/abstracts/variables';
+@import './../../styles/abstracts/mixins';
+
+.search {
+	@include flex-mother(row, center, flex-start);
+	@include dimension(100%, 8rem);
+	margin-top: 2rem;
+	background-color: map-get($clr-map, 'color--primary');
+	box-shadow: 0 0.2rem 1rem map-get($clr-map, 'color--dark-grayish-cyan');
+	border-radius: 0.2rem;
+	z-index: 1;
+}

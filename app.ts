@@ -89,76 +89,6 @@ enum EventTypes {
 		};
 	}
 
-	class Job {
-		job: IJob;
-		constructor(job: IJob) {
-			this.job = job;
-		}
-		renderJobDataModel() {
-			const {
-				logo,
-				company,
-				featured,
-				new: newOffert,
-				contract,
-				location,
-				postedAt,
-				role,
-				level,
-				languages,
-				tools,
-				position,
-			} = this.job;
-
-			const jobRootElement = document.createElement('div');
-			const newJob = newOffert && 'job--new';
-			jobRootElement.classList.add('job');
-			if (newJob) {
-				jobRootElement.classList.add(newJob);
-			}
-
-			jobRootElement.innerHTML = `
-                <div class="offert">
-                <div class="offert__image">
-                    <img
-                        class="img"
-                        src=${logo}
-                        alt="${company} logo"
-                    />
-                </div>
-                <div class="offert__overview">
-                    <div class="offert__name">
-                        <p class="offert__company">${company}</p>
-                        ${
-													newOffert
-														? '<div class="status status--new">New!</div>'
-														: ''
-												}
-                        ${
-													featured
-														? '<div class="status status--featured">Featured</div>'
-														: ''
-												}
-                    </div>
-                    <h2 class="offert__title">${position}</h2>
-                    <ul class="offert__informations">
-                        <li class="offert__information">${postedAt}</li>
-                        <li class="offert__information">${contract}</li>
-                        <li class="offert__information">${location}</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="job__requirement">
-            ${[role, level, ...languages, ...tools]
-							.map((requirement: string) => {
-								return `<button class="btn btn--requirement" data-requirement=${requirement}>${requirement}</button>`;
-							})
-							.join('')}
-            </div>
-            `;
-			return jobRootElement;
-		}
-	}
 
 	class JobFilter {
 		filterOptionsArea: NodeList;
@@ -195,13 +125,6 @@ enum EventTypes {
 			this.filterBar.append(filterOptionItem);
 		};
 
-		addFilterOption = (HTMLTarget: HTMLButtonElement) => {
-			const currentHTMLTargetRequirement = HTMLTarget.dataset.requirement;
-
-			if (this.filterOptions.includes(currentHTMLTargetRequirement)) return;
-
-			// Filter Options Management
-			this.filterOptions.push(currentHTMLTargetRequirement);
 			this.addFilterOptionToFilterBar(currentHTMLTargetRequirement);
 
 			// Filtering Data

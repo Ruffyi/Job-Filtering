@@ -1,18 +1,36 @@
 import { default as bemCssModules } from 'bem-css-modules';
 import { default as JobListStyles } from './JobList.module.scss';
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { jobContext } from '../../store/jobContext';
+import { filterContext } from '../../store/filterContext';
 import JobItem from '../JobItem/JobItem';
+import FilterBar from '../FilterBar/FilterBar';
 
 const styled = bemCssModules(JobListStyles);
 
 const JobList = () => {
 	const { jobsData } = useContext(jobContext);
+	const { filterOptions } = useContext(filterContext);
+
+	const filterData = () => {
+		const filteredData = jobsData.filter(jobData => {
+			const { role, level, languages, tools } = jobData;
+			const requirements = [role, level, ...languages, ...tools];
+			const mappedData = requirements.map(requirement =>
+				filterOptions.includes(requirement)
+			);
+			const activeJobsElements = mappedData.filter(Boolean).length;
+			return activeJobsElements === filterOptions.length && jobData;
+		});
+
+		return filteredData;
+	};
 
 	return (
 		<section className={styled()}>
-			{jobsData.map(
+			<FilterBar />
+			{filterData().map(
 				({
 					id,
 					logo,

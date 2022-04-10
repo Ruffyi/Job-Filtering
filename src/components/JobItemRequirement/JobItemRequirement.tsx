@@ -1,6 +1,7 @@
 import { default as bemCssModules } from 'bem-css-modules';
-import Button from '../UI/Button/Button';
 import { default as JobItemRequirementStyles } from './JobItemRequirement.module.scss';
+
+import Button from '../UI/Button/Button';
 
 import TJobItemRequirement from './JobItemRequirement.types';
 
@@ -14,7 +15,7 @@ const JobItemRequirement = ({
 }: TJobItemRequirement) => {
 	return (
 		<div className={styled()}>
-			{[...languages, ...tools, level, role].map(requirement => {
+			{[role, level, ...languages, ...tools].map(requirement => {
 				return <Button requirement={requirement} />;
 			})}
 		</div>
