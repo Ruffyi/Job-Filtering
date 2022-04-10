@@ -20,7 +20,6 @@ const useFetch = <T>(url: string) => {
 				setError(error.message);
 			}
 		}
-		// setData(data);
 	};
 
 	useEffect(() => {

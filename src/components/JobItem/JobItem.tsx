@@ -48,14 +48,4 @@ const JobItem = ({
 	);
 };
 
-// jobRootElement.innerHTML = `
-//             <div class="job__requirement">
-//             ${[role, level, ...languages, ...tools]
-// 							.map((requirement: string) => {
-// 								return `<button class="btn btn--requirement" data-requirement=${requirement}>${requirement}</button>`;
-// 							})
-// 							.join('')}
-//             </div>
-//             `;
-// return jobRootElement;
 export default JobItem;

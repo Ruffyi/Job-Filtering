@@ -26,7 +26,7 @@ const JobItemOffert = ({
 					alt={`${company} logo`}
 				/>
 			</div>
-			<div className={styled('overview')}>
+			<div>
 				<div className={styled('name')}>
 					<p className={styled('company')}>{company}</p>
 					{newOffert && <JobStatus status='new' />}
