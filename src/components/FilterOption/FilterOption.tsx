@@ -23,12 +23,8 @@ const FilterOption = ({ name }: TFilterOption) => {
 	return (
 		<div className={styled()}>
 			<Button status='none' name={name} />
-			<RemoveButton>
-				<img
-					src='./assets/images/icon-remove.svg'
-					alt='Delete filter option'
-					onClick={removeFilterOption}
-				/>
+			<RemoveButton removeFilterOption={removeFilterOption}>
+				<img src='./assets/images/icon-remove.svg' alt='Delete filter option' />
 			</RemoveButton>
 		</div>
 	);

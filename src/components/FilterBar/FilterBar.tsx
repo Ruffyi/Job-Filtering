@@ -7,11 +7,15 @@ import FilterOption from '../FilterOption/FilterOption';
 
 const styled = bemCssModules(FilterBarStyles);
 
+bemCssModules.setSettings({
+	modifierDelimiter: '--',
+});
+
 const FilterBar = () => {
 	const { filterOptions } = useContext(filterContext);
 
 	return (
-		<div className={styled()}>
+		<div className={styled('', { hide: filterOptions.length === 0 })}>
 			{filterOptions.map(filterOption => {
 				return <FilterOption name={filterOption} />;
 			})}

@@ -1,7 +1,7 @@
-import FilterBar from './components/FilterBar/FilterBar';
 import JobList from './components/JobList/JobList';
 import Header from './layouts/Header/Header';
 import Root from './layouts/Root/Root';
+
 import FilterContextProvider from './store/filterContext';
 import JobContextProvider from './store/jobContext';
 
