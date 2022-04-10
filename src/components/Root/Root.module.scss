@@ -1,0 +1,7 @@
+@import './../../styles/abstracts/variables';
+@import './../../styles/abstracts/mixins';
+
+.main {
+	min-height: 100vh;
+	background-color: map-get($clr-map, 'color--light-grayish-cyan');
+}

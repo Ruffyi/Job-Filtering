@@ -1,5 +1,11 @@
+import Root from './components/Root/Root';
+
 const App = () => {
-	return <h1>React + TypeScript</h1>;
+	return (
+		<Root>
+			<h1>Hi!</h1>
+		</Root>
+	);
 };
 
 export default App;
