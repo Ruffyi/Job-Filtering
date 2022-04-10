@@ -1,0 +1,16 @@
+@import './../../styles/abstracts/variables';
+@import './../../styles/abstracts/mixins';
+
+.status {
+	padding: 0.5rem 1rem;
+	margin: 0 1rem;
+	border-radius: 2rem;
+	text-transform: uppercase;
+	color: map-get($clr-map, 'color--light-grayish-cyan-filter');
+	&--new {
+		background-color: map-get($clr-map, 'color--desaturated-dark-cyan');
+	}
+	&--featured {
+		background-color: map-get($clr-map, 'color--very-dark-grayish-cyan');
+	}
+}

@@ -1,0 +1,33 @@
+@import './../../../styles/abstracts/variables';
+@import './../../../styles/abstracts/mixins';
+@import './../../../styles/abstracts/placeholders';
+
+.btn {
+	@extend %btn-placeholder;
+	padding: 0.5rem;
+	background-color: map-get($clr-map, 'color--light-grayish-cyan-filter');
+	color: map-get($clr-map, 'color--desaturated-dark-cyan');
+	font-weight: 700;
+	font-size: 1.2rem;
+	transition: all 0.3s;
+	&:hover {
+		color: map-get($clr-map, 'color--light-grayish-cyan-filter');
+		background-color: map-get($clr-map, 'color--desaturated-dark-cyan');
+	}
+	&--requirement {
+		&:not(&:last-child) {
+			margin-right: 2rem;
+		}
+		@include mq(map-get($mq-breakpoints, 'mobile')) {
+			margin: 0.5rem 0;
+		}
+	}
+	&--filter {
+		@include flex-mother();
+		color: map-get($clr-map, 'color--light-grayish-cyan-filter');
+		background-color: map-get($clr-map, 'color--desaturated-dark-cyan');
+		&:hover {
+			background-color: map-get($clr-map, 'color--very-dark-grayish-cyan');
+		}
+	}
+}

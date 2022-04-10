@@ -1,0 +1,9 @@
+@import './../../styles/abstracts/variables';
+@import './../../styles/abstracts/mixins';
+
+.requirement {
+	@include mq(map-get($mq-breakpoints, 'mobile')) {
+		padding-top: 2rem;
+		border-top: 2px solid map-get($clr-map, 'color--light-grayish-cyan-filter');
+	}
+}
